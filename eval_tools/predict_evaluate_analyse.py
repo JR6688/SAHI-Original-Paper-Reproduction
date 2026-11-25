@@ -4,11 +4,14 @@ from sahi.predict import predict
 from sahi.scripts.coco_error_analysis import analyse
 from sahi.scripts.coco_evaluation import evaluate
 
-MODEL_PATH = ""
-MODEL_CONFIG_PATH = ""
-EVAL_IMAGES_FOLDER_DIR = ""
-EVAL_DATASET_JSON_PATH = ""
-INFERENCE_SETTING = "XVIEW_SAHI_FI_PO"
+MODEL_PATH = "/workspace/checkpoints/fcos_sf_visdrone.pth"
+MODEL_CONFIG_PATH = "/workspace/mmdet_configs/visdrone_fcos/fcos_full_cls_60.py"
+
+# Dataset paths for VisDrone test-dev
+EVAL_IMAGES_FOLDER_DIR = "/workspace/data/visdrone2019/VisDrone2019-DET-test-dev"
+EVAL_DATASET_JSON_PATH = "/workspace/data/visdrone2019/coco/test-dev.json"
+
+INFERENCE_SETTING = "VISDRONE_SAHI_PO_TESTDEV"
 EXPORT_VISUAL = False
 
 ############ dont change below #############
@@ -64,6 +67,12 @@ INFERENCE_SETTING_TO_PARAMS = {
     },
     "VISDRONE_SAHI_FI_PO": {
         "no_standard_prediction": False,
+        "no_sliced_prediction": False,
+        "slice_size": 640,
+        "overlap_ratio": 0.25,
+    },
+    "VISDRONE_SAHI_PO_TESTDEV": {
+        "no_standard_prediction": True,
         "no_sliced_prediction": False,
         "slice_size": 640,
         "overlap_ratio": 0.25,

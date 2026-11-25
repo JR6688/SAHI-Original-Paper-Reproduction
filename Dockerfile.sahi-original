@@ -1,0 +1,31 @@
+
+FROM nvidia/cuda:11.3.1-cudnn8-devel-ubuntu20.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV PYTHONUNBUFFERED=1
+
+RUN apt-get update && apt-get install -y \
+    python3.8 python3.8-dev python3-pip \
+    git build-essential ninja-build libgl1 libglib2.0-0 \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN python3.8 -m pip install --upgrade "pip<25" setuptools wheel
+
+RUN python3.8 -m pip install \
+    torch==1.10.0+cu113 \
+    torchvision==0.11.1+cu113 \
+    -f https://download.pytorch.org/whl/torch_stable.html
+
+RUN python3.8 -m pip install \
+    mmcv-full==1.4.3 \
+    -f https://download.openmmlab.com/mmcv/dist/cu113/torch1.10.0/index.html
+
+RUN python3.8 -m pip install \
+    mmdet==2.21.0 \
+    sahi==0.9.3 \
+    scipy pillow tqdm tensorboard fire \
+    "numpy<1.24"
+
+WORKDIR /workspace
+
+CMD ["/bin/bash"]
