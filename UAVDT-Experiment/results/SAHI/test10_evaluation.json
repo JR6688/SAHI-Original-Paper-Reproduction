@@ -1,0 +1,30 @@
+{
+    "bbox_mAP":0.4,
+    "bbox_mAP50":0.738,
+    "bbox_mAP75":0.322,
+    "bbox_mAP_s":-1.0,
+    "bbox_mAP_m":0.492,
+    "bbox_mAP_l":0.5,
+    "bbox_mAP50_s":-1.0,
+    "bbox_mAP50_m":0.985,
+    "bbox_mAP50_l":0.811,
+    "bbox_mAP_copypaste":"0.400 0.322 0.738 -1.000 0.492 0.500 -1.000 0.985 0.811",
+    "results_per_category":{
+        "bbox_car_mAP":"0.492",
+        "bbox_car_mAP_s":"-1.000",
+        "bbox_car_mAP_m":"0.492",
+        "bbox_car_mAP_l":"-1.000",
+        "bbox_car_mAP50":"0.985",
+        "bbox_car_mAP50_s":"-1.000",
+        "bbox_car_mAP50_m":"0.985",
+        "bbox_car_mAP50_l":"-1.000",
+        "bbox_truck_mAP":"0.308",
+        "bbox_truck_mAP_s":"-1.000",
+        "bbox_truck_mAP_m":"-1.000",
+        "bbox_truck_mAP_l":"0.500",
+        "bbox_truck_mAP50":"0.491",
+        "bbox_truck_mAP50_s":"-1.000",
+        "bbox_truck_mAP50_m":"-1.000",
+        "bbox_truck_mAP50_l":"0.811"
+    }
+}
